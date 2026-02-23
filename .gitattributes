@@ -1,0 +1,8 @@
+# Exclude entire folders from language calculations
+Lattice_Boltzmann_Methods/* linguist-vendored
+Convolution_CUDA/* linguist-vendored
+ANN_and_Deep_Learning/* linguist-vendored
+
+# Or exclude by file extension
+*.ipynb linguist-detectable=false
+*.cpp linguist-detectable=false
