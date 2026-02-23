@@ -1,4 +1,4 @@
-# Lattice Boltzmann Methods Project
+# Airfoil FSI Project
 
 The code of this project was uploaded in a separate repository. 
 You can find the full source code and implementation here:
