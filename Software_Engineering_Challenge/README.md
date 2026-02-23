@@ -1,6 +1,6 @@
 # Software Engineering Projects
 
-This repository highlights a multidisciplinary approach combining advanced software architectural design with rigorous quality assurance and testing methodologies for high-performance contexts.
+This repository highlights a multidisciplinary approach combining advanced software architectural design with rigorous quality assurance and testing methodologies for high-performance contexts. It is component of two main projects:
 
 ---
 
