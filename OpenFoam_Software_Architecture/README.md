@@ -1,6 +1,6 @@
 # OpenFoam Two-Temperature Model 
 
-Read the Report.pdf above for a complete overview of the project.
+Read the **Report.pdf** above for a complete overview of the project.
 
 
 Since this project was developed in a separate repository, 
