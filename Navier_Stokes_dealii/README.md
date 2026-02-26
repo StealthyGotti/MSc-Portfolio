@@ -1,4 +1,4 @@
-# Airfoil FSI Project
+# Navier Stokes Solver with Dealii
 
 Read the **Report.pdf** above for a complete overview of the project.
 
