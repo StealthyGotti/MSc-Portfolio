@@ -1,4 +1,4 @@
-# AN2DL Challenges - MSc Computer Science @ Polimi
+# AN2DL Challenges - MSc HPC Engineering @ Polimi
 
 This repository contains the solutions developed by my team for the *Artificial Neural Networks and Deep Learning* course challenges.
 
