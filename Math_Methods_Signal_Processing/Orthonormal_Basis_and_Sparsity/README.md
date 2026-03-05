@@ -1,4 +1,4 @@
-## 💻 Assignment 1: Orthonormal Basis & Sparsity
+## Assignment 1: Orthonormal Basis & Sparsity
 The first assignment introduces analysis, synthesis, and sparsity using the Discrete Cosine Transform.
 
 ### Tasks Overview:

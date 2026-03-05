@@ -1,4 +1,4 @@
-## 💻 Assignment 2: 2D-DCT & JPEG Compression
+## Assignment 2: 2D-DCT & JPEG Compression
 The second assignment introduces 2D image transformations and the fundamental concepts of image compression using the 2D Discrete Cosine Transform (DCT).
 
 ### Tasks Overview:
