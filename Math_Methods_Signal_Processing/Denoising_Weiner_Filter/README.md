@@ -1,4 +1,4 @@
-## Challenge: 2D-DCT Image Denoising
+## Assignment: 2D-DCT Image Denoising
 
 This challenge focuses on restoring images corrupted by Additive White Gaussian Noise (AWGN) using advanced patch-based denoising techniques in the 2D Discrete Cosine Transform (DCT) domain.
 
