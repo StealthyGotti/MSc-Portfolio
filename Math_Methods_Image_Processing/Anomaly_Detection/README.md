@@ -1,0 +1,11 @@
+## Assignment: Anomaly Detection in Images via Dictionary Learning (K-SVD)
+
+This assignment explores computer vision security and pattern analysis by implementing an unsupervised Anomaly Detection pipeline on image patches. Instead of defining explicit rules for anomalies, the algorithm learns the statistical structure of a "normal" natural image using K-SVD Dictionary Learning and establishes a threshold-based confidence region to isolate statistical outcasts or foreign perturbations.
+
+### Tasks Overview
+
+* **Data Synthesis and Partitioning**: Setup the environment parameters including the patch framework dimensions $p = 15$ (vectorized to $M = 225$). Extract a massive set of 10,000 random overlapping training patches $S$ to learn the dictionary, and a secondary disjoint validation set $V$ of 10,000 patches to model the normative statistical boundaries.
+* **Normative Feature Preprocessing**: Filter the accumulated baseline datasets by applying a localized intensity median threshold ($> 0.06$) to purge uninformative completely dark patches. Center the remaining operational training arrays by calculating and removing the empirical pixel-wise mean from each patch matrix.
+* **Dictionary Optimization via K-SVD**: Execute the core K-SVD dictionary learning algorithm to optimize an overcomplete dictionary $D \in \mathbb{R}^{225 \times 338}$ directly from the data. The iterative process alternates between calculating sparse coefficient mappings via Orthogonal Matching Pursuit (OMP) under a strict sparsity budget ($L = 4$), and updating dictionary atoms along with their active weights using Singular Value Decomposition (SVD).
+* **Statistical Confidence Region Modeling**: Map the validation patch set $V$ into the learned sparse space using the optimized dictionary. Compute the distribution of representation reconstruction errors ($\|V - DX\|_2^2$) to statistically estimate a confidence boundary threshold, dividing typical background textures from structural anomalies.
+* **Pipeline Evaluation and Validation**: Monitor the computational runtime per K-SVD iteration, visualize the learned overcomplete dictionary atoms as a gray-scale structural matrix to observe localized edge primitives, and analyze the resulting statistical anomaly boundaries.
