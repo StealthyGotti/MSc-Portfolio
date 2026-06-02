@@ -1,0 +1,11 @@
+## Assignment: Robust Parametric Model Fitting and Outlier Rejection
+
+This assignment addresses the challenge of fitting parametric models (such as geometric lines or curves) to datasets heavily contaminated with structural outliers and high-leverage points. Since standard Linear Least Squares optimization fails catastrophically under non-Gaussian noise due to the quadratic penalty of the $L_2$ norm, this assignment implements robust estimation techniques designed to automatically isolate valid inliers and achieve stable structural recovery.
+
+### Tasks Overview
+
+* **Synthetic Dataset Generation**: Synthesize a multi-dimensional point cloud framework based on a linear ground-truth trajectory. Corrupt the clean coordinates by injecting both typical low-variance Gaussian inlier noise and a high percentage of random structural outliers to simulate realistic, imperfect sensor data.
+* **Least Squares Sensitivity Benchmarking**: Apply standard Ordinary Least Squares (OLS) to fit the model parameters over the corrupted dataset. Generate comparative visualizations to demonstrate how the presence of even a few gross outliers severely skews the optimal solution away from the true geometric distribution.
+* **Robust Scale Estimation via MAD**: Implement the Median Absolute Deviation (MAD) as a resilient alternative to standard deviation for estimating the dispersion of residuals. Use $\sigma_{MAD}$ to establish a data-driven, outlier-resistant threshold that separates typical modeling noise from malignant data points.
+* **Robust Fitting Loop Execution**: Implement a robust optimization framework—such as M-estimators optimized via Iteratively Reweighted Least Squares (IRLS) or the Random Sample Consensus (RANSAC) routine—to iteratively downweight or purge data points with high residual values.
+* **Confidence Band and Trajectory Visualization**: Utilize a boundary tracking function (`display_band`) to project the estimated geometric model along with its optimal confidence intervals onto the data scatter plot. Quantify performance by evaluating estimation accuracy, inlier classification rates, and final residual convergence profiles.
