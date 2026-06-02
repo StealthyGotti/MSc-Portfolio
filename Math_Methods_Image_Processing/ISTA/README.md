@@ -1,0 +1,12 @@
+## Assignment: Sparse Optimization via Iterative Soft-Thresholding Algorithm (ISTA)
+
+This assignment focuses on solving an $L_1$-regularized least squares minimization problem (commonly known as Lasso) using the Iterative Soft-Thresholding Algorithm (ISTA)[cite: 5]. The objective is to efficiently compute a sparse solution vector by combining a smooth quadratic loss function with a non-smooth proximity mapping penalty[cite: 5].
+
+### Tasks Overview
+
+* **Problem Formulation and Parameters**: Establish a controlled optimization environment using a low-dimensional matrix $A \in \mathbb{R}^{2 \times 2}$[cite: 5], a target zero-vector $b \in \mathbb{R}^2$[cite: 5], and a constant sparsity regularization parameter $\lambda = 0.5$[cite: 5].
+* **Objective Function and Matrix Calculus**: Implement the primary objective function to be minimized, mathematically defined as $f(x) = \frac{1}{2}\|Ax-b\|_2^2 + \lambda \|x\|_1$[cite: 5]. Derive the exact analytical gradient for the smooth least-squares portion using matrix calculus, given by $\nabla f_{\text{smooth}}(x) = A^T(Ax) - A^Tb$[cite: 5].
+* **Optimization Surface Mapping**: Construct a 3D grid surface plot of the total non-smooth objective function over a spatial coordinate meshgrid[cite: 5]. This structural map visualizes the sharp valleys and convex features induced by the absolute value penalty[cite: 5].
+* **Hyperparameter Configuration**: Configure the algorithmic constraints by setting thresholds for the minimum coordinate update distance ($TOL\_DIST\_X$) and the total safe-guard iteration budget ($MAX\_ITER$)[cite: 5]. Computationally optimize the learning step size ($\alpha$) by taking the reciprocal of the maximum eigenvalue of the system matrix $A^TA$[cite: 5].
+* **Proximal Gradient Loop Implementation**: Initialize the algorithm from a baseline coordinate position[cite: 5]. Run the core iterative loop by performing a gradient descent step on the smooth term, passing the intermediate vector into a soft-thresholding proximal mapping operator ($x = \text{sign}(x_{\text{arg}}) \cdot \max(|x_{\text{arg}}| - \alpha\lambda, 0)$), and validating against the stop criteria[cite: 5].
+* **Path Tracking and Evaluation**: Superimpose the sequential path of optimization estimates directly onto the 3D surface plot to map the algorithmic trajectory[cite: 5]. Output the terminal dataset metrics, including the final iteration count, the retrieved optimal coordinates, and the minimal functional energy value[cite: 5].
