@@ -1,0 +1,11 @@
+## Assignment: Signal Smoothing and Denoising via Local Polynomial Approximation (LPA)
+
+This assignment focuses on reconstructing a non-stationary synthetic signal corrupted by additive White Gaussian Noise using the Local Polynomial Approximation (LPA) filtering methodology. Instead of relying on static linear smoothing bounds, the algorithm fits a polynomial function of degree $N$ to the data within a shifting localized window of size $M$, examining how changing these structural parameters affects the dynamic balance between bias and variance across varying signal frequencies.
+
+### Tasks Overview
+
+* **Parameter Bounds Definition**: Set up the parametric dimensions of the experiment by assigning a baseline maximum polynomial degree $N = 5$ and a localized window frame size $M = 51$. Formulate the analytical trade-offs of the filter, specifically noting how configuration shifts alter the statistical trade-offs (e.g., matching $N = M$ vs. using a small $M$, small $N$ configuration).
+* **Synthetic Signal Generation**: Synthesize a non-stationary testing ground-truth wave function $y(t) = \sin(2 / (t + 0.05))$ evaluated over a sequence of 1,000 equidistant temporal intervals. Corrupt the pristine signal by adding a zero-mean White Gaussian Noise component with a controlled standard deviation of $\sigma = 0.1$.
+* **Input Visualization and Verification**: Produce a comparative validation line plot displaying both the noisy data observations (rendered as individual scatter elements) and the underlying original signal function. This plot serves as the reference benchmark to measure restoration success.
+* **Polynomial Vandermonde Matrix Construction**: Generate an optimized temporal mesh grid vector $t$ ranging from $-1$ to $1$ with a length matching the window frame size $M$. Construct the local design matrix $T \in \mathbb{R}^{M \times (N+1)}$, where each column $l$ systematically stores the evaluation of the polynomial basis element $t^l$.
+* **Basis Evaluation and Trajectory Tracking**: Map out and visualize the independent polynomial vector components contained in the Vandermonde matrix $T$ over the localized interval to track the mathematical behavior of the basis coordinates before filter operation.
