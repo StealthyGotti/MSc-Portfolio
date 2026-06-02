@@ -1,0 +1,12 @@
+## Assignment: Accelerated Sparse Optimization via Fast Iterative Soft-Thresholding Algorithm (FISTA)
+
+This assignment explores advanced convex optimization by implementing the Fast Iterative Soft-Thresholding Algorithm (FISTA) to solve an $L_1$-regularized linear least squares problem (Lasso). FISTA improves upon standard proximal gradient methods by incorporating Nesterov’s acceleration technique, achieving a significantly faster convergence rate ($O(1/k^2)$ compared to $O(1/k)$ for ISTA) while maintaining sparse solution structures.
+
+### Tasks Overview
+
+* **Problem Formulation and Parameters**: Establish the foundational framework for a sparse linear inverse problem by defining a system matrix $A \in \mathbb{R}^{2 \times 2}$, a non-zero target vector $b \in \mathbb{R}^2$, and an absolute sparsity regularization coefficient $\lambda = 0.5$.
+* **Objective Function Breakdown**: Implement the composite non-smooth objective function $f(x) = \frac{1}{2}\|Ax-b\|_2^2 + \lambda \|x\|_1$. Compute the analytical gradient of the smooth quadratic data-fidelity term, defined through matrix calculus rules as $\nabla f_{\text{smooth}}(x) = A^T(Ax - b)$.
+* **Topology Visualization**: Generate a 3D meshgrid surface plot of the optimization landscape to map the objective function's geometric features, highlighting the non-differentiable sharp valleys induced by the $L_1$ penalty.
+* **Step-Size and Constraint Configuration**: Determine the optimal invariant learning step size $\alpha = 1 / \lambda_{max}(A^TA)$ derived from the maximum eigenvalue of the system matrix. Define the algorithmic termination parameters, specifically the coordinate displacement threshold ($TOL\_DIST\_X$) and the maximum iteration budget ($MAX\_ITER$).
+* **Accelerated Proximal Loop Execution**: Implement the FISTA iteration protocol utilizing an auxiliary momentum vector $y$ and an algebraic scaling sequence $t_k$. In each loop, compute a gradient step starting from the momentum point $y$, project the result using the soft-thresholding proximal operator to enforce sparsity, and dynamically update the acceleration weights.
+* **Convergence Profile and Path Evaluation**: Log the full sequential optimization path and superimpose it onto the 3D landscape plot. Extract terminal performance metrics—including total iterations, final minimized functional energy, and optimized sparse coordinates—to evaluate the quadratic acceleration behavior.
