@@ -1,0 +1,11 @@
+## Assignment: Adaptive Window-Size Selection via Intersection of Confidence Intervals (ICI)
+
+This assignment explores adaptive non-parametric estimation by introducing the Intersection of Confidence Intervals (ICI) rule to dynamically optimize the window scale $h$ of a Local Polynomial Approximation (LPA) filter. Rather than employing a single global window size, the algorithm evaluates a grid of scales to automatically adapt to localized signal fluctuations, striking a data-driven balance between smoothing high-frequency noise and preserving sharp signal peaks.
+
+### Tasks Overview
+
+* **Algorithmic Parameter Setup**: Initialize the non-parametric estimator setup by fixing a polynomial degree $N = 5$, establishing a threshold multiplier $\Gamma = 2$ to define the confidence boundaries, and defining a discrete set of scale window choices $h$ ranging up to $h_{max} = 51$.
+* **Noisy Environment Simulation**: Generate a continuous input test signal $y(t) = \sin(2 / (t + 0.05))$ over 1,000 sampling points, inject zero-mean Gaussian noise with a standard deviation $\sigma = 0.2$, and display the degraded array alongside the pristine reference trajectory.
+* **LPA Kernel Compilation**: Construct an automated loop that cycles through each candidate scale $h$, defines a symmetric matrix weights array, and isolates the central slice row of the localized QR decomposition to pre-calculate and store the full corresponding suite of LPA convolution kernels.
+* **Confidence Boundary Optimization Loop**: Track the convergence metrics by calculating the statistical variance and setting up lower and upper data bounds ($lb, ub$) across all candidate steps. Iteratively update the overall structural bounds vector using standard mathematical operations ($\max, \min$) to ensure that the intersection range criteria remain valid.
+* **Scale Intersection Mapping and Profiling**: Map out the terminal execution output layout by selecting the best spatial filtering scale for each data vector element. Render side-by-side performance diagrams mapping the final noise-free waveform estimator and the localized scale footprint array to validate the tracking capability of the ICI protocol.
